@@ -1,1 +1,2 @@
-# sum-of-GCD-of-pairs
+GCD SUM
+
