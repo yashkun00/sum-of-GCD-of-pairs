@@ -110,7 +110,7 @@ answer = 2 + 3
 
 ## 🔄 Algorithm Flow
 
-```mermaid
+```
 flowchart TD
     A[Start] --> B[Input nums]
     B --> C[Initialize mx = 0]
