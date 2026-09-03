@@ -141,7 +141,7 @@ flowchart TD
 
 After sorting:
 
-
+```text
 prefix = [2, 3, 6, 8]
 
           left       right
@@ -151,11 +151,11 @@ prefix = [2, 3, 6, 8]
             Pair
 
 gcd(2, 8) = 2
-
+```
 
 Move both pointers inward:
 
-
+```text
 prefix = [2, 3, 6, 8]
 
              left  right
@@ -164,18 +164,19 @@ prefix = [2, 3, 6, 8]
                ↘  ↙
 
 gcd(3, 6) = 3
-
+```
 
 Final result:
 
+```text
 2 + 3 = 5
+```
 
-
-
+---
 
 ## 💻 Implementation
 
-
+```python
 class Solution(object):
     def gcdPairSum(self, nums):
 
@@ -208,9 +209,9 @@ class Solution(object):
             right -= 1
 
         return ans
+```
 
-
-
+---
 
 ## 🧩 Understanding the `gcd()` Function
 
@@ -225,64 +226,64 @@ def gcd(a, b):
 
 For example:
 
-
+```text
 gcd(8, 12)
 
 12 % 8 = 4
 8 % 4 = 0
 
 GCD = 4
-
+```
 
 The loop continues until `b` becomes `0`. At that point, `a` contains the GCD.
 
-
+---
 
 ## 🧪 Example
 
 ### Input
 
-
+```text
 nums = [3, 6, 2, 8]
-
+```
 
 ### Step 1 — Build `prefix`
 
-
+```text
 3 → gcd(3, 3) = 3
 6 → gcd(6, 6) = 6
 2 → gcd(2, 6) = 2
 8 → gcd(8, 8) = 8
+```
 
-
-
+```text
 prefix = [3, 6, 2, 8]
-
+```
 
 ### Step 2 — Sort
 
-
+```text
 [2, 3, 6, 8]
-
+```
 
 ### Step 3 — Pair
 
-
+```text
 gcd(2, 8) = 2
 gcd(3, 6) = 3
-
+```
 
 ### Final Answer
 
-
+```text
 2 + 3 = 5
+```
 
-
-
+---
 
 ## ⏱️ Complexity
 
-Let "n" be the number of elements in "nums".
+Let `n` be the number of elements in `nums`.
 
 | Operation             |               Complexity |
 | --------------------- | -----------------------: |
@@ -296,23 +297,24 @@ Where `M` represents the magnitude of the input values.
 
 The dominant operation is sorting, so the solution is generally described as:
 
-
+```text
 Time:  O(n log n)
 Space: O(n)
+```
 
-
+---
 
 ## 🎯 Key Concepts Used
 
 This solution demonstrates several important programming concepts:
 
-• **Euclidean Algorithm** for calculating GCD
-• **Running maximum** while traversing an array
-• **Array transformation**
-• **Sorting**
-• **Two-pointer technique**
-• **Nested functions in Python**
-• **Time and space complexity analysis**
+* **Euclidean Algorithm** for calculating GCD
+* **Running maximum** while traversing an array
+* **Array transformation**
+* **Sorting**
+* **Two-pointer technique**
+* **Nested functions in Python**
+* **Time and space complexity analysis**
 
 ---
 
@@ -320,7 +322,7 @@ This solution demonstrates several important programming concepts:
 
 The main idea is to transform the original array into a new list of GCD values:
 
-
+```text
 nums
   ↓
 Running Maximum
