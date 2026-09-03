@@ -110,29 +110,42 @@ answer = 2 + 3
 
 ## 🔄 Algorithm Flow
 
-```
+## 🔄 Algorithm Flow
+
+```mermaid
 flowchart TD
-    A[Start] --> B[Input nums]
-    B --> C[Initialize mx = 0]
-    C --> D[Initialize prefix = []]
-    D --> E[Take next element x]
-    E --> F{Is x > mx?}
-    F -- Yes --> G[Update mx = x]
-    F -- No --> H[Keep current mx]
-    G --> I[Calculate gcd x, mx]
+    A["Start"] --> B["Input nums"]
+    B --> C["Initialize mx = 0"]
+    C --> D["Initialize prefix as empty list"]
+
+    D --> E["Take next element x"]
+    E --> F{"Is x greater than mx"}
+
+    F -- "Yes" --> G["Set mx = x"]
+    F -- "No" --> H["Keep current mx"]
+
+    G --> I["Calculate gcd of x and mx"]
     H --> I
-    I --> J[Append GCD to prefix]
-    J --> K{More elements?}
-    K -- Yes --> E
-    K -- No --> L[Sort prefix]
-    L --> M[Set left = 0]
-    M --> N[Set right = n - 1]
-    N --> O{left < right?}
-    O -- Yes --> P[Calculate gcd prefix[left], prefix[right]]
-    P --> Q[Add GCD to ans]
-    Q --> R[left++, right--]
-    R --> O
-    O -- No --> S[Return ans]
+
+    I --> J["Append GCD to prefix"]
+    J --> K{"Are more elements available"}
+
+    K -- "Yes" --> E
+    K -- "No" --> L["Sort prefix"]
+
+    L --> M["Set left = 0 and right = last index"]
+    M --> N["Set ans = 0"]
+
+    N --> O{"Is left smaller than right"}
+
+    O -- "Yes" --> P["Calculate gcd of prefix left and prefix right"]
+    P --> Q["Add GCD to ans"]
+    Q --> R["Move left forward"]
+    R --> S["Move right backward"]
+    S --> O
+
+    O -- "No" --> T["Return ans"]
+    T --> U["End"]
 ```
 
 ---
