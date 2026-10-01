@@ -15,8 +15,8 @@ class Solution(object):
 
         prefix.sort()
 
-        left = 0
-        right = len(prefix) - 1
+        left = 1
+        right = len(prefix) - 2
         ans = 0
 
         while left < right:
