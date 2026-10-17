@@ -46,7 +46,7 @@ The important part is that `mx` represents the **largest value encountered up to
 For:
 
 ```text
-nums = [3, 6, 2, 8]
+nums = [1, 6, 2, 8]
 ```
 
 We get:
